@@ -13,7 +13,8 @@ int main() {
     struct Node *evenH=NULL, *evenT=NULL, *oddH=NULL, *oddT=NULL;
 
     for (int i = 0; i < n; i++) {
-        int x; scanf("%d", &x);
+        int x; 
+        scanf("%d", &x);
         struct Node* t = malloc(sizeof(struct Node));
         t->data = x;
         t->next = NULL;
@@ -35,4 +36,5 @@ int main() {
         head = head->next;
     }
     return 0;
+
 }
