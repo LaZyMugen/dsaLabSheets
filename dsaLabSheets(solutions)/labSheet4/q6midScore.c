@@ -8,7 +8,7 @@
 
 #include<stdio.h>
 
-int countLessEqual(int arr[],int c,int x){  //does binary search in one row
+int countLessEqual(int arr[],int c,int x){  //does binary search in one row  //we will pass mid as x here and basically help in counting all elemnets <=mid
     int l=0, r=c-1;
     while(l <= r) {
         int m = (l+r)/2;
@@ -17,7 +17,7 @@ int countLessEqual(int arr[],int c,int x){  //does binary search in one row
         else
             r = m-1;
     }
-    return l;
+    return l;  //return l which is basically number of elements in that row<=x
 }
 
 int main() {
@@ -31,9 +31,9 @@ int main() {
 
     int low = a[0][0], high = a[0][C-1];
     for(int i=1;i<R;i++) {
-        if(a[i][0] < low) low = a[i][0];
-        if(a[i][C-1] > high) high = a[i][C-1];
-    }
+        if(a[i][0] < low) low = a[i][0];//edge case when first isnt lowest element
+        if(a[i][C-1] > high) high = a[i][C-1];//edge case when last isnt highest element
+    }         //idhar tak low n high pata chl gya
 
     int desired = (R*C)/2;
 
@@ -42,7 +42,7 @@ int main() {
         int count = 0;
 
         for(int i=0;i<R;i++)
-            count += countLessEqual(a[i], C, mid);
+            count += countLessEqual(a[i], C, mid);//counts totla such elements<=x
 
         if(count <= desired)
             low = mid+1;
