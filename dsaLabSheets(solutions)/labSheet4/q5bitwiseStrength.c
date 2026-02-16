@@ -18,7 +18,7 @@ int main() {
     for(int i = 0; i < N; i++)
         scanf("%d", &arr[i]);
 
-    for(int i = 0; i < N-1; i++)  //bubble sort with condition
+    for(int i = 0; i < N-1; i++)  //selection sort with condition
         for(int j = 0; j < N-i-1; j++) {
             int s1 = strength(arr[j]);
             int s2 = strength(arr[j+1]);
